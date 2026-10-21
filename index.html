@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MindVault</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app">
+    <aside>
+      <div class="brand"><div class="brand-mark">M</div> MindVault</div>
+      <button class="new-btn" id="newFolderBtn">＋ Create folder</button>
+      <nav class="nav" aria-label="Main navigation">
+        <button class="active" data-view="all"><span>▦</span> My files</button>
+        <button data-view="recent"><span>◷</span> Recent</button>
+        <button data-view="starred"><span>☆</span> Starred</button>
+      </nav>
+      <div class="storage-note">
+        <strong>Local demo storage</strong>
+        Files are saved in this browser on this device. This is not cloud storage yet.
+      </div>
+    </aside>
+
+    <main>
+      <div class="topbar">
+        <div class="search"><input id="searchInput" type="search" placeholder="Search files and folders..." aria-label="Search files and folders"></div>
+        <div class="avatar" title="Demo profile">U</div>
+      </div>
+      <div class="heading-row">
+        <div>
+          <div class="eyebrow">YOUR PERSONAL LIBRARY</div>
+          <h1 id="pageTitle">My files</h1>
+          <p class="sub">A home for your modules, notes, and study materials.</p>
+        </div>
+        <div class="actions">
+          <button class="secondary" id="uploadBtn">↑ Upload files</button>
+          <button class="primary" id="newFolderBtnTop">＋ New folder</button>
+        </div>
+      </div>
+      <input id="fileInput" type="file" multiple />
+      <div class="crumbs" id="breadcrumbs"></div>
+      <div class="section-title"><h2 id="foldersTitle">Folders</h2><span class="count" id="folderCount"></span>
+      <button class="generate-btn">Generate Reviewer</button></div>
+      <div class="grid" id="folderGrid"></div>
+      <div class="section-title"><h2 id="filesTitle">Files</h2><span class="count" id="fileCount"></span>
+      <button class="generate-btn">Generate Reviewer</button></div>
+      <div class="grid" id="fileGrid"></div>
+    </main>
+  </div>
+
+  <dialog id="nameDialog">
+    <form id="nameForm">
+      <h2 id="dialogTitle">Create a folder</h2>
+      <p id="dialogDescription">Choose a name for this folder.</p>
+      <input id="nameInput" maxlength="120" required autocomplete="off" placeholder="e.g. CC2 Programming" />
+      <div class="dialog-actions">
+        <button type="button" class="secondary" id="cancelDialog">Cancel</button>
+        <button type="submit" class="primary">Save</button>
+      </div>
+    </form>
+  </dialog>
+  <div class="toast" id="toast" role="status"></div>
+  <script src="script.js"></script>
+</body>
+</html>
